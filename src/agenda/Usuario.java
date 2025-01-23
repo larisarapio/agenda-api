@@ -8,12 +8,13 @@ class Usuario{
     private String notas;
     private Endereco endereco;
 
-    public Usuario(String nome, String telefone, String email, Categoria categoria, String notas) {
+    public Usuario(String nome, String telefone, String email, Categoria categoria, String notas, Endereco endereco) {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.categoria = categoria;
         this.notas = notas;
+        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -67,13 +68,23 @@ class Usuario{
     @Override
     public String toString() {
         return String.format(
-                "Nome: %s | Telefone: %s | Email: %s | Categoria: %s | Notas: %s",
+                "Nome: %s | Telefone: %s | Email: %s | Categoria: %s | Notas: %s" +
+                        " | Endereço: %s ",
                 this.nome,
                 this.telefone,
                 this.email,
                 this.categoria,
-                this.notas
+                this.notas,
+                this.endereco
         );
+    }
+
+    public String getTipoUsuario() {
+        return "Usuário Comum";
+    }
+
+    public void executarAcao() {
+        System.out.println("Ação padrão para o usuário.");
     }
 
 }

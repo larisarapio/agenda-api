@@ -22,6 +22,7 @@ class Agenda {
     }
 
     public void adicinarContato(Usuario contato) {
+        System.out.println("Contato adicionado: " + contato.getNome());
         contatos.add(contato);
 
     }
@@ -31,12 +32,23 @@ class Agenda {
 
     }
 
-    public void editarContato(Usuario contato) {
-        contatos.set(contatos.indexOf(contato), contato);
-
+    public void editarContato(Usuario contato, String novoNome, String novoTelefone, String novoEmail) {
+        if (contatos.contains(contato)) {
+            contato.setNome(novoNome);
+            contato.setTelefone(novoTelefone);
+            contato.setEmail(novoEmail);
+            System.out.printf("Contato atualizado: %s\n", contato.getNome());
+        } else {
+            System.out.println("Contato não encontrado na lista.");
+        }
     }
 
+
     public List<Usuario> listarContatos() {
+        System.out.printf("Listando todas os contatos: \n");
+        for (Usuario contato : contatos) {
+            System.out.println(contato);
+        }
         return contatos;
 
     }
