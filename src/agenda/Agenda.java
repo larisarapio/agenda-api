@@ -3,34 +3,40 @@ package agenda;
 import java.util.ArrayList;
 import java.util.List;
 
-class Agenda extends Usuario{
-    private List<Agenda> contatos;
+class Agenda {
+    private List<Usuario> contatos;
 
-    public Agenda(String nome, String telefone, String email, Categoria categoria, String notas) {
-        super(nome, telefone, email, categoria, notas);
+    public Agenda() {
+        this.contatos = new ArrayList<>();
     }
 
-    public void buscaContato() {
-        contatos = new ArrayList<Agenda>();
+    public void buscaContato(String nome) {
+        for (Usuario contato : contatos) {
+            if (contato.getNome().equalsIgnoreCase(nome)) {
+                System.out.println("Contato encontrado: " + contato.getNome());
+                return;
+            }
+        }
+        System.out.println("Contato não encontrado.");
 
     }
 
-    public void adicinarContato(Agenda contato) {
+    public void adicinarContato(Usuario contato) {
         contatos.add(contato);
 
     }
 
-    public void removerContato(Agenda contato){
+    public void removerContato(Usuario contato) {
         contatos.remove(contato);
 
     }
 
-    public void editarContato(Agenda contato){
+    public void editarContato(Usuario contato) {
         contatos.set(contatos.indexOf(contato), contato);
 
     }
 
-    public List<Agenda> listarContatos() {
+    public List<Usuario> listarContatos() {
         return contatos;
 
     }
