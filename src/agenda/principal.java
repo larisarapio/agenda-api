@@ -53,6 +53,10 @@ public class principal {
         novaLista.add("Item 3");
         novaLista.add("Item 3");
 
+        novaLista.addFirst("Item 5");
+        novaLista.addLast("Item 6");
+        System.out.printf(String.valueOf(novaLista));
+
         Set<String> itensUnicos = new HashSet<>();
         boolean hasDuplicado = false;
 
