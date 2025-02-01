@@ -43,7 +43,6 @@ class Agenda {
         }
     }
 
-
     public List<Usuario> listarContatos() {
         System.out.printf("Listando todas os contatos: \n");
         for (Usuario contato : contatos) {
@@ -52,4 +51,5 @@ class Agenda {
         return contatos;
 
     }
+
 }

@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class principal {
     public static void main(String[] args) {
-        /*
+
         Endereco enderecoUsuario1 = new Endereco("Av ABC", 2, "52000");
         Endereco enderecoUsuario2 = new Endereco("Av Carlos Gomes", 97, "450");
 
@@ -19,7 +19,14 @@ public class principal {
                                         "Nada a declarar",
                                         enderecoUsuario1);
         System.out.println(usuario1);
+        if (usuario1.verificaNomeDuplicado("Lu")) {
+            System.out.println("Não pode cadastrar esse usuário");
+        } else {
+            System.out.println("Usuário pode ser cadastrado");
+        }
 
+
+        /*
         UsuarioEmergencial usuario2 = new UsuarioEmergencial(
                                                         "SAMU",
                                                         "190",
@@ -45,7 +52,7 @@ public class principal {
         listaUsuarios.listarContatos();
 
 
-         */
+
 
         List<String> novaLista = new ArrayList<>();
         novaLista.add("Item 1");
@@ -70,6 +77,9 @@ public class principal {
         if (!hasDuplicado) {
             System.out.println("Não há duplicados na lista.");
         }
+
+        */
+
 
     }
 
