@@ -79,19 +79,4 @@ class Usuario{
         );
     }
 
-    public String getTipoUsuario() {
-        return "Usuário Comum";
-    }
-
-    public void executarAcao() {
-        System.out.println("Ação padrão para o usuário.");
-    }
-
-
-    public boolean verificaNomeDuplicado(String nome) {
-        if (getNome().equalsIgnoreCase(nome)) {
-            return true;
-        }
-        return false;
-    }
 }

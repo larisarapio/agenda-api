@@ -25,6 +25,7 @@ public class UsuarioEmergencial extends Usuario {
         System.out.println(formatoData);
     }
 
+    /*
     @Override
     public String getTipoUsuario() {
         return "Usuário Emergencial: " + servicoEmergencial;
@@ -34,4 +35,6 @@ public class UsuarioEmergencial extends Usuario {
     public void executarAcao() {
         System.out.println("Atendendo chamado para " + servicoEmergencial);
     }
+
+     */
 }

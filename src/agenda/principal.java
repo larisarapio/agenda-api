@@ -8,22 +8,32 @@ import java.util.Set;
 public class principal {
     public static void main(String[] args) {
 
-        Endereco enderecoUsuario1 = new Endereco("Av ABC", 2, "52000");
-        Endereco enderecoUsuario2 = new Endereco("Av Carlos Gomes", 97, "450");
+        Endereco endereco = new Endereco("Av ABC", 345, "9022222");
+
+        Usuario usuario = new Usuario(
+                "Larissa",
+                "51 995900966",
+                "larissa@gmail.com",
+                Categoria.AMIGOS,
+                "nada a declarar",
+                endereco
+        );
 
         Usuario usuario1 = new Usuario(
-                                        "Larissa",
-                                        "51 - 99999999",
-                                        "larissa@gmail.com",
-                                        Categoria.FAMILIA,
-                                        "Nada a declarar",
-                                        enderecoUsuario1);
-        System.out.println(usuario1);
-        if (usuario1.verificaNomeDuplicado("Lu")) {
-            System.out.println("Não pode cadastrar esse usuário");
-        } else {
-            System.out.println("Usuário pode ser cadastrado");
-        }
+                "larissa",
+                "51 995900966",
+                "larissa@gmail.com",
+                Categoria.AMIGOS,
+                "nada a declarar",
+                endereco
+        );
+
+
+        Agenda novoUsuario = new Agenda();
+        novoUsuario.adicinarContato(usuario);
+        novoUsuario.adicinarContato(usuario1);
+        novoUsuario.listarContatos();
+        novoUsuario.buscarContato("larissa", Categoria.AMIGOS);
 
 
         /*

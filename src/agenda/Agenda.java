@@ -10,20 +10,13 @@ class Agenda {
         this.contatos = new ArrayList<>();
     }
 
-    public void buscaContato(String nome) {
-        for (Usuario contato : contatos) {
-            if (contato.getNome().equalsIgnoreCase(nome)) {
-                System.out.println("Contato encontrado: " + contato.getNome());
-                return;
-            }
-        }
-        System.out.println("Contato não encontrado.");
-
-    }
-
     public void adicinarContato(Usuario contato) {
-        System.out.println("Contato adicionado: " + contato.getNome());
-        contatos.add(contato);
+        if (verificaNomeDuplicado(contato.getNome(), contato.getCategoria())) {
+            System.out.println("Erro: Já existe um contato com o mesmo nome e categoria.");
+        } else {
+            contatos.add(contato);
+            System.out.println("Contato adicionado: " + contato.getNome());
+        }
 
     }
 
@@ -50,6 +43,32 @@ class Agenda {
         }
         return contatos;
 
+    }
+
+    public List<Usuario> buscarContato(String nome, Categoria categoria) {
+
+        List<Usuario> contatosEncontrados = new ArrayList<>();
+
+        for (Usuario contato : contatos) {
+            if(contato.getCategoria() == categoria) {
+                if (contato.getNome().equalsIgnoreCase(nome)) {
+                    System.out.println("Contato encontrado: " + contato.getNome());
+                    contatosEncontrados.add(contato);
+                }
+            }
+        }
+
+        return  contatosEncontrados;
+    }
+
+    public boolean verificaNomeDuplicado(String nome, Categoria categoria) {
+        for (Usuario contato : contatos) {
+            if (contato.getNome().equalsIgnoreCase(nome)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }
