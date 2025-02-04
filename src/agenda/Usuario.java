@@ -80,8 +80,9 @@ class Usuario {
     @Override
     public String toString() {
         return String.format(
-                "Nome: %s | Telefone: %s | Email: %s | Categoria: %s | Notas: %s" +
+                "ID: %s | Nome: %s | Telefone: %s | Email: %s | Categoria: %s | Notas: %s" +
                         " | Endereço: %s ",
+                this.uuid,
                 this.nome,
                 this.telefone,
                 this.email,
