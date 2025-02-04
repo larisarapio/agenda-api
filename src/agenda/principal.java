@@ -5,90 +5,26 @@ import java.util.*;
 public class principal {
     public static void main(String[] args) {
 
+
+        UsuarioLogado usuarioLogado = new UsuarioLogado("12345", "Larissa", 3);
+        Agenda agenda = new Agenda();
         Endereco endereco = new Endereco("Av ABC", 345, "9022222");
 
-        Usuario usuario = new Usuario(
-                UUID.randomUUID(),
-                "Larissa",
-                "51 995900966",
-                "larissa@gmail.com",
-                Categoria.AMIGOS,
-                "nada a declarar",
-                endereco
-        );
+        Usuario contato1 = new Usuario(UUID.randomUUID(), "João", "51 99999-9999", "joao@gmail.com", Categoria.AMIGOS, "Amigo de infância", endereco);
+        Usuario contato2 = new Usuario(UUID.randomUUID(), "Maria", "51 88888-8888", "maria@gmail.com", Categoria.FAMILIA, "Prima", endereco);
+        Usuario contato3 = new Usuario(UUID.randomUUID(), "Pedro", "51 77777-7777", "pedro@gmail.com", Categoria.TRABALHO, "Colega de trabalho", endereco);
+        Usuario contato4 = new Usuario(UUID.randomUUID(), "Ana", "51 66666-6666", "ana@gmail.com", Categoria.AMIGOS, "Vizinha", endereco);
 
-        Usuario usuario1 = new Usuario(
-                UUID.randomUUID(),
-                "larissa",
-                "51 995900966",
-                "larissa@gmail.com",
-                Categoria.AMIGOS,
-                "nada a declarar",
-                endereco
-        );
+        agenda.adicionarContato(usuarioLogado.getId(), contato1, usuarioLogado);
+        agenda.adicionarContato(usuarioLogado.getId(), contato2, usuarioLogado);
+        agenda.adicionarContato(usuarioLogado.getId(), contato3, usuarioLogado);
+        agenda.adicionarContato(usuarioLogado.getId(), contato4, usuarioLogado);
 
-
-        Agenda novoUsuario = new Agenda();
-        novoUsuario.adicinarContato(usuario);
-        novoUsuario.adicinarContato(usuario1);
-        novoUsuario.listarContatos();
-        novoUsuario.buscarContato("larissa", Categoria.AMIGOS);
-
-
-        /*
-        UsuarioEmergencial usuario2 = new UsuarioEmergencial(
-                                                        "SAMU",
-                                                        "190",
-                                                        "samu@gmail.com",
-                                                        Categoria.EMERGENCIA,
-                                                        "Contato de emergencias",
-                                                        enderecoUsuario2);
-
-        System.out.println(usuario2);
-        usuario2.setServicoEmergencial("SAMU");
-        usuario2.executarAcao();
-        usuario2.momentoLigacao();
-
-        Agenda listaUsuarios = new Agenda();
-        listaUsuarios.adicinarContato(usuario1);
-        listaUsuarios.adicinarContato(usuario2);
-        listaUsuarios.listarContatos();
-
-        listaUsuarios.editarContato(usuario2, "POLÍCIA", "51 - 995900967", "larissasa22@gmail.com");
-        listaUsuarios.listarContatos();
-        listaUsuarios.buscaContato("Larissa s");
-        listaUsuarios.removerContato(usuario1);
-        listaUsuarios.listarContatos();
-
-
-
-
-        List<String> novaLista = new ArrayList<>();
-        novaLista.add("Item 1");
-        novaLista.add("Item 2");
-        novaLista.add("Item 3");
-        novaLista.add("Item 3");
-
-        novaLista.addFirst("Item 5");
-        novaLista.addLast("Item 6");
-        System.out.printf(String.valueOf(novaLista));
-
-        Set<String> itensUnicos = new HashSet<>();
-        boolean hasDuplicado = false;
-
-        for(String item : novaLista) {
-            if (!itensUnicos.add(item)) {
-                hasDuplicado = true;
-                System.out.printf("Item %s ja existe\n", item);
-            }
+        List<Usuario> contatos = agenda.listarContatos(usuarioLogado.getId());
+        System.out.println("Contatos cadastrados:");
+        for (Usuario contato : contatos) {
+            System.out.println(contato);
         }
-
-        if (!hasDuplicado) {
-            System.out.println("Não há duplicados na lista.");
-        }
-
-        */
-
 
     }
 
