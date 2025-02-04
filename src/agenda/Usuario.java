@@ -1,6 +1,9 @@
 package agenda;
 
-class Usuario{
+import java.util.UUID;
+
+class Usuario {
+    private UUID uuid;
     private String nome;
     private String telefone;
     private String email;
@@ -8,13 +11,22 @@ class Usuario{
     private String notas;
     private Endereco endereco;
 
-    public Usuario(String nome, String telefone, String email, Categoria categoria, String notas, Endereco endereco) {
+    public Usuario(UUID uuid, String nome, String telefone, String email, Categoria categoria, String notas, Endereco endereco) {
+        this.uuid = uuid;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.categoria = categoria;
         this.notas = notas;
         this.endereco = endereco;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
     }
 
     public String getNome() {

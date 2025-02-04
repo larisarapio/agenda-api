@@ -1,9 +1,6 @@
 package agenda;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class principal {
     public static void main(String[] args) {
@@ -11,6 +8,7 @@ public class principal {
         Endereco endereco = new Endereco("Av ABC", 345, "9022222");
 
         Usuario usuario = new Usuario(
+                UUID.randomUUID(),
                 "Larissa",
                 "51 995900966",
                 "larissa@gmail.com",
@@ -20,6 +18,7 @@ public class principal {
         );
 
         Usuario usuario1 = new Usuario(
+                UUID.randomUUID(),
                 "larissa",
                 "51 995900966",
                 "larissa@gmail.com",

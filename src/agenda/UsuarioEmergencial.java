@@ -2,13 +2,15 @@ package agenda;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 public class UsuarioEmergencial extends Usuario {
     private String servicoEmergencial;
 
-    public UsuarioEmergencial(String nome, String telefone, String email, Categoria categoria, String notas, Endereco endereco) {
-        super(nome, telefone, email, categoria, notas, endereco);
+    public UsuarioEmergencial(UUID uuid, String nome, String telefone, String email, Categoria categoria, String notas, Endereco endereco) {
+        super(uuid, nome, telefone, email, categoria, notas, endereco);
     }
+
 
     public String getServicoEmergencial() {
         return servicoEmergencial;
