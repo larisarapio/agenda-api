@@ -1,10 +1,14 @@
 package estruturaDados;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Matriz {
     public static void main(String[] args) {
+
+        /*
         int [] numeros = {1, 2, 3, 4, 4};
         System.out.println(Arrays.toString(numeros.clone()));
         int sum = Arrays.stream(numeros).reduce(0, (a, b) -> a + b);
@@ -34,6 +38,27 @@ public class Matriz {
                 .sorted()
                 .forEach(System.out::println);
 
+        */
+
+        // soma
+        int [] soma = {1, 2, 3, 4};
+        int total = Arrays.stream(soma).reduce(0, (a,b) -> a + b);
+        System.out.println(total);
+
+        // menor numero
+        int [] menorMaiorNumero = {5, 3, 7, 1, 9};
+        int maior = Arrays.stream(menorMaiorNumero).max().getAsInt();
+        int menor = Arrays.stream(menorMaiorNumero).min().getAsInt();
+        System.out.println(maior + " maior e maior " + menor);
+
+        //inverte
+        Integer[] numeros = {1, 2, 3, 4, 5};
+        List<Integer> listaInvertida = Arrays.stream(numeros)
+                .collect(Collectors.toList());
+
+        Collections.reverse(listaInvertida);
+
+        System.out.println("invertindo:" + listaInvertida);
 
     }
 }
