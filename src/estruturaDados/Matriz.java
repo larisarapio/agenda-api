@@ -1,9 +1,6 @@
 package estruturaDados;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Matriz {
@@ -100,6 +97,35 @@ public class Matriz {
         List<String> listaImutavel = Collections.unmodifiableList(lista);
 
         System.out.println(listaImutavel);
+
+
+        // frequencia de números
+        int[] nums =  {1, 2, 3, 1, 4, 2};
+
+        Map<Integer, Integer> frequencia = new HashMap<>();
+
+        for (int num : nums) {
+            frequencia.put(num, frequencia.getOrDefault(num, 0) + 1);
+        }
+
+        System.out.println("Números duplicados e suas frequências:");
+        for (Map.Entry<Integer, Integer> entry : frequencia.entrySet()) {
+            if (entry.getValue() > 1) {
+                System.out.println("Número: " + entry.getKey() + " Aparece: " + entry.getValue() + " x");
+            }
+        }
+
+
+        //usando Map
+        int[] nums2 = {1, 2, 3, 1, 4, 2};
+
+        Map<Integer, Integer> frequencia1 = new HashMap<>();
+
+        for (int num : nums2) {
+            frequencia1.put(num, frequencia1.getOrDefault(num, 0) + 1);
+        }
+
+        System.out.println("Frequência dos números: " + frequencia1);
 
     }
 }
