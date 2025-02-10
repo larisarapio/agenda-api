@@ -5,7 +5,6 @@ import java.util.*;
 public class principal {
     public static void main(String[] args) {
 
-
         UsuarioLogado usuarioLogado = new UsuarioLogado("12345", "Larissa", 3);
         Agenda agenda = new Agenda();
         Endereco endereco = new Endereco("Av ABC", 345, "9022222");

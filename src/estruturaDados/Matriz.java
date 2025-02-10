@@ -99,7 +99,7 @@ public class Matriz {
         System.out.println(listaImutavel);
 
 
-        // frequencia de números
+        // >>>>>>>>>>> frequencia de números com HASHMAP
         int[] nums =  {1, 2, 3, 1, 4, 2};
 
         Map<Integer, Integer> frequencia = new HashMap<>();
@@ -116,7 +116,7 @@ public class Matriz {
         }
 
 
-        //usando Map
+        //com Map
         int[] nums2 = {1, 2, 3, 1, 4, 2};
 
         Map<Integer, Integer> frequencia1 = new HashMap<>();
@@ -126,6 +126,31 @@ public class Matriz {
         }
 
         System.out.println("Frequência dos números: " + frequencia1);
+
+
+        //sem biblioteca
+        int[] testeNumeros =  {1, 2, 3, 1, 4, 2};
+        System.out.println("Números repetidos (sem biblioteca):");
+
+        for (int i = 0; i < testeNumeros.length; i++) {
+            boolean jaVerificado = false;
+            for (int k = 0; k < i; k++) {
+                if (testeNumeros[k] == testeNumeros[i]) {
+                    jaVerificado = true;
+                    break;
+                }
+            }
+            if (jaVerificado) continue;
+
+            for (int j = i + 1; j < testeNumeros.length; j++) {
+                if (testeNumeros[i] == testeNumeros[j]) {
+                    System.out.println(testeNumeros[i]);
+                    break;
+                }
+            }
+        }
+
+
 
     }
 }
