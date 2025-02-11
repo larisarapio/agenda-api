@@ -25,6 +25,25 @@ public class principal {
             System.out.println(contato);
         }
 
+        UsuarioLogado usuarioLogado2 = new UsuarioLogado("1122", "Arthur", 2);
+        Agenda agenda2 = new Agenda();
+        Endereco endereco2 = new Endereco("Av DEF", 678, "9022222");
+
+        Usuario cont1 = new Usuario(UUID.randomUUID(), "Teste1", "51 99999-9999", "joao@gmail.com", Categoria.AMIGOS, "Amigo de infância", endereco2);
+        Usuario cont2 = new Usuario(UUID.randomUUID(), "Teste2", "51 88888-8888", "maria@gmail.com", Categoria.FAMILIA, "Prima", endereco2);
+        Usuario cont3 = new Usuario(UUID.randomUUID(), "Teste3", "51 77777-7777", "pedro@gmail.com", Categoria.TRABALHO, "Colega de trabalho", endereco2);
+
+        agenda2.adicionarContato(usuarioLogado2.getId(), cont1, usuarioLogado2);
+        agenda2.adicionarContato(usuarioLogado2.getId(), cont2, usuarioLogado2);
+        agenda2.adicionarContato(usuarioLogado2.getId(), cont3, usuarioLogado2);
+
+        List<Usuario> maisContatos = agenda2.listarContatos(usuarioLogado2.getId());
+        System.out.println("Contatos cadastrados:");
+        for (Usuario contato : maisContatos) {
+            System.out.println(contato);
+        }
+
+
     }
 
 }
