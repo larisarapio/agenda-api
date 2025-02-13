@@ -17,11 +17,6 @@ class Agenda {
         contatosPorUsuario.putIfAbsent(usuarioId, new ArrayList<>());
 
         List<Usuario> contatosDoUsuario = contatosPorUsuario.get(usuarioId);
-        if (contatosDoUsuario.size() >= usuarioLogado.getLimiteDeContatos()) {
-            System.out.printf("Erro: Limite de %d contatos atingido para o usuário %s.%n",
-                    usuarioLogado.getLimiteDeContatos(), usuarioLogado.getNome());
-            return;
-        }
 
         if (verificaNomeDuplicado(contato.getNome(), contato.getCategoria(), contatosDoUsuario)) {
             System.out.println("Erro: Já existe um contato com o mesmo nome e categoria.");

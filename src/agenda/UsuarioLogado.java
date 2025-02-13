@@ -3,7 +3,7 @@ package agenda;
 public class UsuarioLogado {
     private String id;
     private String nome;
-    private int limiteDeContatos;
+    int limiteDeContatos;
 
     public UsuarioLogado(String id, String nome, int limiteDeContatos) {
         this.id = id;
@@ -33,5 +33,11 @@ public class UsuarioLogado {
 
     public void setLimiteDeContatos(int limiteDeContatos) {
         this.limiteDeContatos = limiteDeContatos;
+    }
+
+    public void definindoLimiteContatos(int limiteDeContatos) {
+        if (limiteDeContatos > 5) {
+            System.out.println("Você não pode mais cadastrar novos usuários, atingiu limite de Cliente Teste. Vá até seu perfil e edite seu plano para Premium.");
+        }
     }
 }

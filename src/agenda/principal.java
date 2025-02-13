@@ -5,7 +5,9 @@ import java.util.*;
 public class principal {
     public static void main(String[] args) {
 
-        UsuarioLogado usuarioLogado = new UsuarioLogado("12345", "Larissa", 3);
+        UsuarioLogado usuarioLogado = new UsuarioLogado("12345", "Larissa", 2);
+        usuarioLogado.definindoLimiteContatos(usuarioLogado.limiteDeContatos);
+
         Agenda agenda = new Agenda();
         Endereco endereco = new Endereco("Av ABC", 345, "9022222");
 
@@ -45,5 +47,6 @@ public class principal {
 
 
     }
+
 
 }
