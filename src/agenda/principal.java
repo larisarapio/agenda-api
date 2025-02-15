@@ -1,5 +1,9 @@
 package agenda;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class principal {
@@ -44,6 +48,37 @@ public class principal {
         for (Usuario contato : maisContatos) {
             System.out.println(contato);
         }
+
+        System.out.println("EM JSONNNN");
+
+        // Caminho absoluto do arquivo
+        File arquivo = new File("D:/Users/lucia/Music/new-pc/agenda-api/src/agenda/usuariosLogados.json");
+
+
+        // Verificando o caminho absoluto
+        System.out.println("Procurando arquivo em: " + arquivo.getAbsolutePath());
+
+        StringBuilder jsonString = new StringBuilder();
+
+        // Verificando se o arquivo existe
+        if (!arquivo.exists()) {
+            System.out.println("Arquivo não encontrado!");
+            return;
+        }
+
+        // Lê o arquivo JSON
+        try (BufferedReader reader = new BufferedReader(new FileReader(arquivo))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                jsonString.append(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Imprime o conteúdo do arquivo JSON
+        System.out.println("Conteúdo do arquivo JSON:");
+        System.out.println(jsonString.toString());
 
 
     }

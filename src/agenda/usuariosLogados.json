@@ -1,0 +1,29 @@
+{
+    "usuariosLogados": [
+        {
+            "id": "00000",
+            "nome": "Larissa",
+            "limiteContatos": 5
+        },
+        {
+            "id": "11111",
+            "nome": "Arthur",
+            "limiteContatos": 2
+        },
+        {
+            "id": "22222",
+            "nome": "Luciano",
+            "limiteContatos": 2
+        },
+        {
+            "id": "33333",
+            "nome": "Titião",
+            "limiteContatos": 3
+        },
+        {
+            "id": "44444",
+            "nome": "Alemão",
+            "limiteContatos": 4
+        }
+    ]
+}
